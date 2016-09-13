@@ -1,8 +1,9 @@
-package net.progeny.tree;
+//package net.progeny.tree;
 
 public class Node {
   private Node leftNode;
   private Node rightNode;
+  private Node padre;
   private int value;
 
   /**
@@ -58,6 +59,15 @@ public class Node {
    */
   public int getValue() {
     return value;
+  }
+  /**
+  * Establece el nodo que representa el padre de 
+  * este nodo.
+  * 
+  * @param pa El nuevo padre.
+  */
+  public void ponPadre(Node pa){
+    padre = pa;
   }
 
   /**

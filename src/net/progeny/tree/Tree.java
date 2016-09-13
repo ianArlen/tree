@@ -1,6 +1,6 @@
-package net.progeny.tree;
+//package net.progeny.tree;
 
-import net.progeny.tree.Node;
+//import net.progeny.tree.Node;
 
 public class Tree {
   private Node rootNode;
@@ -75,6 +75,34 @@ public class Tree {
       else
         insertNode(currentNode.getRightNode(), newNode);
     }
+  }
+  public boolean hasLeftChild(Node v){
+    return v.getLeftNode() != null;
+  }
+
+  public boolean hasRightChild(Node v){
+    return v.getRightNode() != null;
+  }
+  /**
+  * Efectua un recorrido en preorden a partir del nodo que le pasan,
+  * imprimiendo los nodos en el orden que se visitan
+  */
+  public void preorder(Node v){
+    System.out.println(v.getValue());
+
+    if(hasLeftChild(v)){
+      preorder(v.getLeftNode());
+    }
+
+    if(hasRightChild(v)){
+      preorder(v.getRightNode());
+    }
+  }
+  /**
+  * Efectua un recorrido en preorden a este arbol.
+  */
+  public void preorder(){
+    preorder(rootNode);
   }
 
   /**
